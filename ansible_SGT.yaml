@@ -1,8 +1,11 @@
+---
+
 - name: Echo
-  hosts: localhost
   connection: local
+  gather_facts: false
+  hosts: localhost
   tasks:
-  
-      - name: Print text
+
+    - name: Print text
       debug:
-      msg: "hey,youre great!"
+        msg: "hey, youre great"
