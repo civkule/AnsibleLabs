@@ -2,9 +2,9 @@
 
 - name: Echo
   gather_facts: false
-  hosts: backEndServers
+  hosts: "{{host}}"
   tasks:
 
     - name: Print text
       debug:
-        msg: "hey, youre great"
+        msg: "{{text}}"
