@@ -1,7 +1,6 @@
 ---
 
 - name: Echo
-  gather_facts: false
   hosts: "{{host}}"
   tasks:
 
