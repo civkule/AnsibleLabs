@@ -1,1 +1,11 @@
+---
 
+- name: Echo
+  connection: 44.202.132.152 3.84.145.87 3.88.213.100
+  gather_facts: false
+  hosts: all
+  tasks:
+
+    - name: Print text
+      debug:
+        msg: "hey, youre great"
