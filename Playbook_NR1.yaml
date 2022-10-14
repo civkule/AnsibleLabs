@@ -7,7 +7,4 @@
     - name: Print text
       debug:
         msg: "{{text}}"
-	-name: ansible create directory example
-		file:
-			path: /tmp/civkule/java_dns
-			state: directory
+
