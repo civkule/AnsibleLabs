@@ -1,6 +1,6 @@
 ---
 
-- name: Echo
+- name: echo
   hosts: "{{host}}"
   vars:
     extracted_hosts: "{{host}}"
