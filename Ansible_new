@@ -1,0 +1,28 @@
+---
+# This playbook prints a simple debug message
+- name: Echo 
+  hosts: "{{class}}"
+  vars:
+    extracted_hosts: "{{class}}"
+  tasks:
+  - name: Print debug message
+    debug:
+      msg: "{{text}}"
+    when: extracted_hosts == "all"
+  - name: Creates directory
+    file:
+      path: /tmp/civkule/gradle
+      state: directory
+    when: extracted_hosts == "back-end-servers"
+  - name: download sources
+    get_url: url=https://services.gradle.org/distributions/{{gradle_version}} dest=/tmp/civkule/gradle/{{gradle_version}}
+  - name: Extract foo.tgz into /var/lib/foo
+    unarchive:
+      src: /tmp/civkule/gradle/{{gradle_version}}
+      dest: /tmp/civkule/gradle
+      remote_src: yes
+    when: extracted_hosts == "back-end-servers"
+  - name: Print gradle_version
+    debug:
+      msg: "{{gradle_version}}"
+    when: extracted_hosts == "back-end-servers"
