@@ -7,17 +7,17 @@
   tasks:
   - name: ansible create directory example
     file:
-      path: /tmp/katrina/java_dns
+      path: /tmp/Civkule/java_dns
       state: directory
   - name: ansible create gradle
     file:
-      path: /tmp/katrina/gradle
+      path: /tmp/Civkule/gradle
       state: directory
     when: extracted_hosts == "backEndServers"
   - name: download sources
     get_url: url=https://repo1.maven.org/maven2/dnsjava/dnsjava/3.5.0/dnsjava-3.5.0.jar dest=/tmp/test/java_dns
   - name: download gradle
-    get_url: url=https://services.gradle.org/distributions/gradle-8.0-milestone-2-docs.zip dest=/tmp/katrina
+    get_url: url=https://services.gradle.org/distributions/gradle-8.0-milestone-2-docs.zip dest=/tmp/Civkule
   - name: Unarchive a file that is already on the remote machine
-    ansible.builtin.unarchive: src=/tmp/katrina/gradle-8.0-milestone-2-docs.zip dest=/tmp/katrina/gradle remote_src=yes
+    ansible.builtin.unarchive: src=/tmp/Civkule/gradle-8.0-milestone-2-docs.zip dest=/tmp/Civkule/gradle remote_src=yes
     when: extracted_hosts == "backEndServers"
